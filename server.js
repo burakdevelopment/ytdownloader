@@ -8,7 +8,7 @@ const port = 3000;
 app.use(express.json());
 app.use(express.static('public'));
 
-// Ana sayfa rotası
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
@@ -57,7 +57,7 @@ app.post('/download', async (req, res) => {
         console.log(`İndirme başlıyor: ${normalizedUrl} - ${quality}`);
         const tempFile = path.join(__dirname, `temp_video_${quality}.mp4`);
 
-        // İndirme işlemini gerçekleştir
+        
         const startTime = Date.now();
         await youtubedl(normalizedUrl, {
             format: `bestvideo[height<=?${quality.replace('p', '')}]+bestaudio/best`,
@@ -72,7 +72,7 @@ app.post('/download', async (req, res) => {
 
         const fileSize = fs.statSync(tempFile).size;
         console.log(`Dosya boyutu: ${fileSize} bytes`);
-        if (fileSize < 1024) { // 1KB’dan küçükse boş kabul et
+        if (fileSize < 1024) { 
             fs.unlinkSync(tempFile);
             throw new Error('Dosya çok küçük indirme başarısız!');
         }
@@ -81,7 +81,7 @@ app.post('/download', async (req, res) => {
         res.setHeader('Content-Type', 'video/mp4');
         res.download(tempFile, `video_${quality}.mp4`, (err) => {
             if (err) console.error('Dosya gönderme hatası: ', err);
-            fs.unlinkSync(tempFile); // İndirme sonrası dosyayı sil
+            fs.unlinkSync(tempFile); 
         });
 
     } catch (error) {
