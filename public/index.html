@@ -76,15 +76,15 @@
 </head>
 <body>
     <div class="container">
-        <h1>YouTube Video İndirici</h1>
+        <h1>YTDownloader</h1>
         <input type="text" id="videoUrl" placeholder="YouTube URL'sini yapıştır">
-        <button onclick="getVideo()">Videoyu Getir</button>
+        <button onclick="getVideo()">Fetch Video</button>
         <div class="loader" id="loader"></div>
         <div class="download-options" id="downloadOptions">
-            <button onclick="downloadVideo('1080p')">1080p İndir</button>
-            <button onclick="downloadVideo('720p')">720p İndir</button>
-            <button onclick="downloadVideo('1440p')">2K İndir</button>
-            <button onclick="downloadVideo('2160p')">4K İndir</button>
+            <button onclick="downloadVideo('1080p')">1080p </button>
+            <button onclick="downloadVideo('720p')">720p </button>
+            <button onclick="downloadVideo('1440p')">2K </button>
+            <button onclick="downloadVideo('2160p')">4K </button>
         </div>
     </div>
 
@@ -92,7 +92,7 @@
         async function getVideo() {
             const url = document.getElementById('videoUrl').value;
             if (!url.includes('youtube.com') && !url.includes('youtu.be')) {
-                alert('YouTube URL’si gir');
+                alert('Enter YouTube URL');
                 return;
             }
             const loader = document.getElementById('loader');
@@ -138,10 +138,10 @@
                 link.click();
                 document.body.removeChild(link);
                 loader.style.display = 'none';
-                alert(`${quality} video iniyor!`);
+                alert(`${quality} video is downloading`);
             } catch (error) {
                 loader.style.display = 'none';
-                alert('indirme başarısız: ' + error.message);
+                alert('download failed: ' + error.message);
             }
         }
     </script>
