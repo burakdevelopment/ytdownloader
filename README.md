@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/version-v1.0-red.svg) ![License](https://img.shields.io/badge/license-MIT-black.svg) ![Node.js](https://img.shields.io/badge/node.js-v20+-green.svg) ![Platform](https://img.shields.io/badge/platform-Linux%20|%20Windows%20|%20macOS-orange.svg)
 
-**YouTube Video İndirici** Developed with HTML, CSS, JS, and Node.js, it allows you to download YouTube videos in MP4 format in various qualities, including 1080p, 720p, 2K, and 4K. It uses `youtube-dl-exec` for its backend and offers a completely browser-based interface.
+**YTDownloader** Developed with HTML, CSS, JS, and Node.js, it allows you to download YouTube videos in MP4 format in various qualities, including 1080p, 720p, 2K, and 4K. It uses `youtube-dl-exec` for its backend and offers a completely browser-based interface.
 
 ---
 
